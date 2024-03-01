@@ -1,0 +1,14 @@
+{
+  "name": "music-collection",
+  "version": "1.0.0",
+  "description": "Manage your music collection",
+  "main": "music",
+  "bin": {
+    "music": "index.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Laura Addams",
+  "license": "ISC"
+}
