@@ -4,11 +4,14 @@
   "description": "Manage your music collection",
   "main": "music",
   "bin": {
-    "music": "index.js"
+    "music": "./src/index.js"
   },
   "scripts": {
     "test": "jest"
   },
   "author": "Laura Addams",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
