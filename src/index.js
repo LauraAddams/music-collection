@@ -1,9 +1,11 @@
 #! /usr/bin/env node
 const repl = require("node:repl");
 const collection = require("./collection");
+const string = require("./utils/string");
+const errors = require("./utils/errors");
 
 // Startup greeting
-console.log("Welcome to your music collection!");
+console.log(string.padded("Welcome to your music collection!"));
 
 function musicCollection() {
   // Create a instance of REPLServer with custom evaluator
@@ -30,15 +32,15 @@ function musicCollection() {
         result = "commandList";
         break;
       case "quit":
-        console.log("Bye!");
+        console.log(string.padded("Bye!"));
         process.exit();
       default:
-        result = "oops";
+        result = errors.invalidInput;
         break;
     }
 
     // Display result with line breaks
-    console.log(result);
+    console.log(string.padded(result));
 
     // Complete process
     callback(null);
