@@ -1,6 +1,8 @@
 #! /usr/bin/env node
 const repl = require("node:repl");
 const collection = require("./collection");
+const { list } = require("./command/index");
+const { options } = require("./command/data");
 const string = require("./utils/string");
 const errors = require("./utils/errors");
 
@@ -8,6 +10,8 @@ const errors = require("./utils/errors");
 console.log(string.padded("Welcome to your music collection!"));
 
 function musicCollection() {
+  const commandList = list(options);
+
   // Create a instance of REPLServer with custom evaluator
   const replServer = repl.start({
     eval: evaluator,
@@ -29,7 +33,7 @@ function musicCollection() {
         result = collection.show(command);
         break;
       case "help":
-        result = "commandList";
+        result = commandList;
         break;
       case "quit":
         console.log(string.padded("Bye!"));
