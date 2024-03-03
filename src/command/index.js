@@ -11,4 +11,16 @@ function list(options) {
   );
 }
 
-module.exports = { list };
+function validate(input, regex) {
+  return regex.test(input);
+}
+
+function parse(input) {
+  // Split command into array of [action, input1, ...];
+  return input
+    .split('"')
+    .map((entry) => entry.trim()) // Removes trailing spaces
+    .filter((entry) => entry.trim()); // Filters out empty values
+}
+
+module.exports = { list, validate, parse };
