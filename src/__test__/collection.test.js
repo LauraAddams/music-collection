@@ -1,4 +1,4 @@
-const collection = require("../../collection");
+const collection = require("../collection");
 
 describe("collection", () => {
   beforeEach(() => {

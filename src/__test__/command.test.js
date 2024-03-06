@@ -1,4 +1,4 @@
-const { list, validate, parse } = require("../../command/index");
+const { list, validate, parse } = require("../command/index");
 
 describe("command", () => {
   it("formats a list of command options", () => {
